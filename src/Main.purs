@@ -1,13 +1,17 @@
 module Main where
 import Diana
 
-discard :: Unit -> Unit
-discard _ = unit
+fact :: Int -> Int
+fact x = fact_tco x 1
 
-ignore :: forall a. a -> Unit
-ignore _ = unit
+fact_tco :: Int -> Int -> Int
+fact_tco x n
+    | x == 0 = n
+    | true = fact_tco (x-1) (n * x)
 
 main :: Unit -> Unit
 main _ =
-    let _ = ignore (log "🍝") in
-    log $ 2 + 2.0
+    let _ = log "🍝" in 
+    let _ = log "555" in
+    let k = if 1 > 2 then 5 else 3 in
+    log $ fact 10

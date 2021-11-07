@@ -64,10 +64,6 @@ class Modulo a b c | a b -> c where
 class Negateable a where
     neg :: a -> a
 
-
-class IsNumber :: forall k. k -> Constraint
-class IsNumber a 
-
 instance Addable Int Int Int where
     add = _add
 
@@ -92,7 +88,6 @@ instance Subable Number Int Number where
 instance Subable Int Number Number where
     sub = _sub
 
-
 instance Multipliable Int Int Int where
     mul = _mul
 
@@ -104,7 +99,6 @@ instance Multipliable Number Int Number where
 
 instance Multipliable Int Number Number where
     mul = _mul
-
 
 instance Divisible Int Int Int where
     div = _idiv
@@ -129,7 +123,6 @@ instance Eq Int where
 
 instance Eq Number where
     eq = _eq
-
 
 instance Ord Int where
     lt = _lt
@@ -169,7 +162,7 @@ or ::  Boolean -> Boolean -> Boolean
 or = _or
 
 gt :: forall a . (Ord a) => a -> a -> Boolean
-gt x y = and (neq x y)  (not (lt x y))
+gt x y = and (neq x y) (not (lt x y))
 
 le :: forall a . (Ord a) => a -> a -> Boolean
 le x y = or (eq x y) (lt x y)
