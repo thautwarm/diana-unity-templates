@@ -1,0 +1,39 @@
+exports = {}
+exports.log = log
+exports.unit = None
+
+exports.getitem = subject -> fun (item)
+    subject.[item]
+end
+
+exports.setitem = subject -> item -> fun (value)
+    subject.[item] = value
+end
+
+exports._fdiv = _fdiv
+exports._idiv = _idiv
+
+exports._div = x -> y -> x / y
+
+exports._add = x -> y -> x + y
+exports._sub = x -> y -> x - y
+exports._mul = x -> y -> x * y
+exports._mod = x -> y -> x % y
+exports._neg = x -> -x
+
+exports._eq = x -> y -> x == y
+
+exports._neq = x -> y -> x != y
+
+exports._lt = x -> y -> x < y
+
+exports._gt = x -> y -> x > y
+
+exports._ge = x -> y -> x >= y
+
+exports._le = x -> y -> x <= y
+
+exports._and = x -> y -> x and y
+exports._or = x -> y -> x or y
+
+exports._power = x -> y -> x ** y
